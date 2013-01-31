@@ -1,0 +1,17 @@
+GIT
+  remote: git@github.com:ProductLab/patent_source.git
+  revision: ca43c37000cdb3fab558901fd10e8e82876c28fa
+  specs:
+    patent_source (0.1.0)
+      nokogiri
+
+GEM
+  remote: http://rubygems.org/
+  specs:
+    nokogiri (1.5.6)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  patent_source!
