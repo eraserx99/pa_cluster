@@ -29,8 +29,8 @@ class CreateTables < ActiveRecord::Migration
 
 		create_table :terms do |t|
 			t.references :run
-			t.column :term, :string
-			t.column :topic, :integer
+			t.column :topic_num, :integer
+			t.column :stem, :string
 			t.column :prob, :float
 		end
 

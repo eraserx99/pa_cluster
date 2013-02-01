@@ -1,0 +1,5 @@
+adapter: mysql2
+host: 10.6.1.26
+database: pa_cluster_test
+username: root
+password: P3pe6SFnTkapbk
