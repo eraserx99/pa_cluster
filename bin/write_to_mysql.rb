@@ -47,13 +47,17 @@ def store_run
 end
 
 def clean_run
+	puts 'cleaning run.'
 	runs = Run.where(name: @run.name)
 	runs.each do |run|
 		run_id = run.id
 
-		Doc.where(run_id: run_id).destroy_all
-		Topic.where(run_id: run_id).destroy_all
-		Term.where(run_id: run_id).destroy_all
+		puts '+ removing docs...'
+		Doc.where(run_id: run_id).delete_all
+		puts '+ removing topics...'
+		Topic.where(run_id: run_id).delete_all
+		puts '+ removing terms...'
+		Term.where(run_id: run_id).delete_all
 		run.destroy
 
 		puts "run cleaned."
