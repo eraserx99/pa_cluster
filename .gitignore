@@ -1,5 +1,7 @@
+.bundle/
 log/*.log
 temp/
 out/
+vendor/bundle
 
 *.swp
