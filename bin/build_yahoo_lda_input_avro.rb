@@ -15,8 +15,8 @@ SCHEMA = <<-JSON
   	"name": "document",
   	"fields" : [
     		{ "name": "id", "type": "string" },
-    		{ "name": "id-aux", "type": "string" },
-    		{ "name": "import-timestamp", "type": "string" },
+    		{ "name": "id_aux", "type": "string" },
+    		{ "name": "import_timestamp", "type": "string" },
     		{ "name": "contents", "type": "string" }
   	]
 }
@@ -51,8 +51,8 @@ File.open(output_file, 'wb') do |out_f|
 
 		if should_write
 			dw << { "id" => id, 
-					"id-aux" => cls, 
-					"import-timestamp" => Time.now.to_s,
+					"id_aux" => cls, 
+					"import_timestamp" => Time.now.to_s,
 					"contents" => File.read(file_name) }
 		end
 	end
