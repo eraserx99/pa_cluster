@@ -3,5 +3,6 @@ log/*.log
 temp/
 out/
 vendor/bundle
+*.avro
 
 *.swp

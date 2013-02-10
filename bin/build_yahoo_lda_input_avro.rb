@@ -37,7 +37,8 @@ File.open(output_file, 'wb') do |out_f|
 	dw = Avro::DataFile::Writer.new(out_f, writer, schema)
 
 	Dir.glob("#{input_dir}/**/*.txt") do |file_name|
-		parts = File.basename(file_name, '.txt').split('-')
+		basename = File.basename(file_name, '.txt')
+		parts = basename.split('-')
 		id = parts[0]
 		cls = parts[1]
 
@@ -50,7 +51,7 @@ File.open(output_file, 'wb') do |out_f|
 		end
 
 		if should_write
-			dw << { "id" => id, 
+			dw << { "id" => basename, 
 					"id_aux" => cls, 
 					"import_timestamp" => Time.now.to_s,
 					"contents" => File.read(file_name) }
